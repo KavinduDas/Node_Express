@@ -17,6 +17,12 @@ const app = express()
 //DB Config
 const db = require('./config/database')
 
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT,()=>{
+    console.log(`Server Running on port ${PORT}`)
+})
+
 // CONNECT TO MONGODB
 mongoose.connect(db.mongourl)
     .then(() => console.log("MongoDB Connected"))
@@ -24,8 +30,6 @@ mongoose.connect(db.mongourl)
 
 
 // const idea = require('./models/Idea')
-
-const port = process.env.PORT || 5000;
 
 
 // Config passport 
@@ -97,11 +101,6 @@ app.get('/about', (req, res) => {
 app.get('/abouthandle', (req, res) => {
     res.render('about')
 })
-
-app.listen(port, () => {
-    console.log(`Server started on ${port}`)
-})
-
 
 
 // Edit Form Process
