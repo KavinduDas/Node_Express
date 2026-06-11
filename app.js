@@ -88,7 +88,7 @@ app.use(bodyParser.json())
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('Index')
+    res.render('index')
 })
 
 
