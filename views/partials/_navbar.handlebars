@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Vidjot</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        {{#if users}}
+        </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">                               
+          <a 
+            href="#" 
+            class="nav-link dropdown-toggle"                        
+            data-bs-toggle="dropdown"                                
+            id="navbarDropdownMenuLink"
+            role="button"
+            aria-expanded="false"
+          >Video Ideas</a>
+          <div class="dropdown-menu dropdown-menu-end">  
+            <a href="/ideas" class="dropdown-item">Ideas</a>          
+            <a href="/ideas/add" class="dropdown-item">Add Idea</a>
+          </div>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/users/logout">Logout</a>
+        </li>
+      </ul>
+      {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/register">Register</a>
+        </li>
+        {{/if}}
+    </div>
+  </div>
+</nav>
